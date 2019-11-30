@@ -1,0 +1,13 @@
+Cutter:
+  Port: 5005
+  Cache:
+    folder: ..\..\images\
+    size: 1 # in MB
+    cleantime: 3 # interval in minutes
+  Logger:
+    level: info
+    encoding: console
+    outputPaths:
+      - stdout
+    errorOutputPaths:
+      - stderr

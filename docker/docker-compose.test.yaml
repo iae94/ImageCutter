@@ -1,0 +1,25 @@
+version: "3"
+services:
+  tests:
+    image: iae94/cutter_tests
+    container_name: "cutter_tests"
+    depends_on:
+      - nginx
+      - cutter
+  nginx:
+    image: iae94/cutter_nginx
+    container_name: "cutter_nginx"
+    ports:
+      - "80:80"
+  cutter:
+    image: iae94/cutter_service
+    container_name: "cutter_service"
+    ports:
+      - "5006:5006"
+    environment:
+      PORT: 5006
+      CACHESIZE: 1 # in MB
+      CACHECLEAN: 3 # clean cache interval in minutes
+      CACHEFOLDER: ../../images/ # cache folder
+volumes:
+  cutter_volume:

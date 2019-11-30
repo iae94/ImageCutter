@@ -1,0 +1,21 @@
+FROM golang:alpine as builder
+
+RUN apk update && apk upgrade && apk add --no-cache bash git openssh
+
+COPY /ImageCutter /go/src/ImageCutter
+WORKDIR /go/src/ImageCutter/cmd/cutter
+
+ENV GO111MODULE=on
+RUN go mod download
+RUN go build -v .
+FROM alpine
+RUN adduser -S -h /app cutter_user
+COPY --from=builder /go/src/ImageCutter /app/
+WORKDIR /app/cmd/cutter
+
+USER root
+RUN chmod -R 777 /app
+RUN chown -R cutter_user /app
+
+USER cutter_user
+CMD ["./cutter"]

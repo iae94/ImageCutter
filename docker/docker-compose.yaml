@@ -1,0 +1,14 @@
+version: "3"
+services:
+  cutter:
+    image: iae94/cutter_service
+    container_name: "cutter_service"
+    ports:
+      - "5006:5006"
+    environment:
+      PORT: 5006
+      CACHESIZE: 1 # in MB
+      CACHECLEAN: 3 # clean cache interval in minutes
+      CACHEFOLDER: ../../images/ # cache folder
+volumes:
+  cutter_volume:

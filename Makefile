@@ -5,8 +5,6 @@ DOCKER_DIR=docker
 
 all: build test run
 test: unit_test integration_test
-temp:
-		@echo "Run unit tests($(OS))..."
 unit_test:
 		@echo "Run unit tests(lru)..."
 		@cd $(UNIT_TEST_DIR) && \

@@ -1,4 +1,4 @@
-module ImageCutter/pkg/logger
+module github.com/iae94/ImageCutter/pkg/logger
 
 go 1.12
 

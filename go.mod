@@ -4,7 +4,7 @@ go 1.12
 
 require (
 	github.com/iae94/ImageCutter/pkg/logger v0.0.0 // indirect
-	ImageCutter/pkg/models v0.0.0 // indirect
+	github.com/iae94/ImageCutter/pkg/models v0.0.0 // indirect
 	github.com/DATA-DOG/godog v0.7.13
 )
 replace (

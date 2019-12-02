@@ -1,4 +1,4 @@
-module ImageCutter
+module github.com/iae94/ImageCutter
 
 go 1.12
 
